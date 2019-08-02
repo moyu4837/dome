@@ -1,0 +1,357 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.box{
+    width: 100%;
+}
+.enter{
+    width: 100%;
+    height: 36px;
+    background: #f9f9f9;
+}
+
+.wrapper{
+    width: 1200px;
+    line-height: 36px;
+   margin: auto;
+    color: #999;
+}
+.header{
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 1200px;
+    height: 100px;
+}
+h1{ width: 240px;
+    padding-top: 15px;
+    margin-right: 10px;
+}
+.ad{margin: 10px 10px 0 0;
+    width: 100px;
+    height: 70px;
+}
+.search-form{
+    position: relative;
+    margin: 20px 0 0 40px;
+    width: 500px;
+    height: 44px;
+}
+.search-tab{
+    font-size: 14px;
+    margin: 3px 2px 0 15px;
+    position: absolute;
+    line-height: 36px;
+    width: 60px;
+}
+
+.arrow{position: absolute;
+    top: 15px;
+    right:5px;
+    width: 6px;
+    height: 6px;
+    border-color: #777 transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+}
+.search-tab>li:hover .arrow{
+    border-color:  transparent transparent #777 transparent;
+}
+.search-tab>li{
+    text-align: center;
+    color: #666;
+    background: #fff;
+}
+.search-tab>li:nth-child(2){
+    text-align: center;
+    color: #666;
+    background: #fff;
+    display: none;
+}
+
+form{
+    width: 500px;
+    height: 44px;
+    border-radius: 30px;
+    border: 2px solid #2F97F0;
+}
+.input-text{
+    outline: none;
+    font-size: 12px;
+    width: 322px;
+    height: 38px;
+    border: none;
+    margin-left: 85px;
+    line-height: 38px;
+}
+.input-submit{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 79px;
+    height: 36px;
+    background: #2F97F0;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    line-height: 1;
+    border-radius: 30px;
+}
+.keyword>ul{
+    display: flex;
+    font-size: 12px;
+    width: 500px;
+    height: 20px;
+    margin-top: 4px;
+    color: #999;
+}
+.keyword>ul>li{
+    color: #666;
+    margin-right: 12px;
+}
+.head-user-menu{
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 252px;
+    display: flex;
+    justify-content: space-around;
+}
+dl{z-index: 2;
+    width: 112px;
+    float: right;
+}
+dl:hover>dt{
+    background: #fff;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    top: 1px;
+}
+dl:hover .arrow{
+    border-color:  transparent transparent #777 transparent;
+}
+.cur{
+    display: block;
+}
+dt{background: #fafafa;
+    float: right;
+    padding: 10px;
+    color: #555;
+    font-size: 12px;
+    position: relative;
+    width: 112px;
+    height: 42px;
+    border: solid 1px #F0F0F0;
+}
+dd{float: right;
+    right: 0;
+    width: 308px;
+    height: 226px;
+    background: #fff;
+    border: solid 1px #F0F0F0;
+    display: none
+}
+.icon{
+    display: inline-block;
+    width: 20px;
+    height: 16px;
+}
+.tab{height: 36px;
+    color: #fff;
+    width: 100%;
+    background: #2f97f0;
+    display: flex;
+    justify-content: center;
+}
+h4{
+    padding:0 18px 0 18px;
+    line-height: 36px;
+}
+.tab>li{
+    padding:0 18px 0 18px;
+    line-height: 36px;
+}
+.banner{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+}
+.ult{position: absolute;
+    width: 200%;
+    height: 400px;
+}
+.lun1{
+    float: left;
+    background-repeat: no-repeat;
+    background-position: -150px;
+    background-image: url(https://www.nanshig.com/data/upload/shop/editor/web-101-101-1.jpg?135);
+    width: 1519.2px;
+    height: 100%;
+    
+}
+.lun2{
+    float: left;
+    background-repeat: no-repeat;
+    background-position: -150px;
+    background-image: url(https://www.nanshig.com/data/upload/shop/editor/web-101-101-3.jpg?634);
+    width: 1519.2px;
+    height: 100%;
+    
+}
+
+.ji{position: absolute;
+    display: flex;
+    top: 360px;
+    left: 50%;
+    margin-left: -325px;
+    justify-content: center;
+    z-index: 1;
+    width: 616px;
+    height: 20px;
+}
+.ji>span{width: 40px;
+    margin-left: 4px;
+    border-radius: 5px;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.25);
+}
+.ji>span.active{
+    background: #2F97F0;
+}
+p{  width: 80%;
+    height: 100px;
+    line-height: 100px;
+    /*background: red;*/
+    position: absolute;
+    left: 50%;
+    margin-left: -40%;
+    margin-top: 200px;
+    font-size: 100px;
+    color: #fff;
+    z-index: 2;
+    opacity: 0;
+}
+p>span{
+    background: #333;
+}
+p:hover{
+    opacity: 0.6;
+}
+span:nth-child(1) {
+    float: left;
+     
+}
+span:nth-child(2) {
+     float: right;
+      
+}
+
+.concent{
+    margin: auto;
+    margin-top: 15px;
+    width: 1200px;
+    height: 489px;
+}
+.ns_tab{
+    width: 100%;
+    height: 39px;
+    border-bottom: 3px solid #e6e6e6;
+}
+.bn_fl{
+    float: left;
+    width: 64px;
+    height: 36px;   
+    color: #2f97f0;
+    line-height: 30px;
+}
+.bn_fl>ul{
+    display: block;
+    position: relative;
+    top: 6px;
+    border-bottom: 3px solid #2f97f0;
+}
+.bn_fr{
+    padding-left: 26px;
+    position: relative;
+    width: 112.5px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #666;
+    float: right;
+}
+.clearfix{
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-around;
+    color: #555;
+    font-size: 12px;
+    width: 335px;
+    line-height: 32px;
+}
+.list{
+    width: 1200px;
+    margin: auto;
+}
+.list>li{
+    position: relative;
+    float: left;
+    width: 294px;
+    height: 405px;
+    margin-right: 8px;
+    border-radius: 3px;
+    border: 2px solid #FaFaFa;
+}
+.list>li:last-child{
+    margin-right: 0;
+}
+.list>li:hover{
+    border: 2px solid #559BD3;
+    bottom: 4px;
+}
+.istoday{
+    width: 40px;
+    height: 35px;
+    line-height: 35px;                      
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    background: #45bbff;
+}
+.list>li>img{
+    width: 290px;
+    height: 290px;
+}
+.name{
+    font-size: 12px;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 276px;
+    height: 20px;
+    margin: 12px 0 7px 14px;
+}
+.price-final{
+    font-size: 26px;
+    color: #ff5555;
+    margin-left: 14px;
+}
+.buy-icon{
+    text-align: center;
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    line-height: 29px;
+    border-radius: 3px;
+    right: 16px;
+    bottom: 30px;
+    color: #fff;
+    background: #ff5555;
+}
