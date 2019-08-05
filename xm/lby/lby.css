@@ -1,30 +1,58 @@
-*{
-    padding: 0;margin: 0;
-    box-sizing: border-box;
-    list-style: none;
+em{
+    font-style: normal;
+}
+.breadcrumb {
+    width: 1200px;
+    text-align: left;
+    height: 20px;
+    margin: 10px auto;
+}
+.icon-home{
+    font-size: 14px;
+    color: #AAA;
+    margin-right: 4px;
+}
+.breadcrumb span{
+    font-size: 12px;
+    line-height: 20px;
+    color: #999;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    height: 20px;
 }
 #main-nav-holder{
     width: 1200px;
     margin: auto;
 }
 .nch-module{
+    margin-bottom: 10px;
     width: 100%;
     height: 143px;
     border: #d7d7d7 1px solid;
     border-top: #2f97f0 2px solid;
 }
-.title{
+.titl{
     width: 100%;
     height: 36px;
     background: #f5f5f5;
 }
+.titl h3{
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    height: 20px;
+    padding: 8px 10px;
+}
 #main-nav{
     width: 100%;
     height: 38px;
+    display: flex;
     background: #f7f7f7;
     border: solid 1px #D7D7D7;
 }
 .nch-sortbar-array{
+    display: flex;
     width: 480px;
     height: 38px;
     line-height: 38px;
@@ -32,6 +60,289 @@
     color: #777;
     font-size: 12px;
 }
-ul{
+.nch-sortbar-array ul{
+    border-right: solid 1px #E6E6E6;
+    display: block;
     display: flex;
+}
+.nch-sortbar-array li{
+    border-left: solid 1px #E6E6E6;
+}
+.nch-sortbar-array li>a{
+    line-height: 20px;
+    color: #555;
+    display: block;
+    padding: 8px 9px 8px 10px;
+}
+.nch-sortbar-array li:hover{
+    background: #fff;
+    border-bottom: 1px solid #fff;
+}
+.nch-sortbar-array li:hover a{
+    color: #2f97f0;
+}
+.nch-sortbar-array li a i{
+    background: url(https://www.nanshig.com/shop/templates/default/images/2014shop_background_img.png) no-repeat 0 -11px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 7px;
+    height: 8px;
+    margin-left: 4px;
+}
+.nch-sortbar-array li:hover a i{
+    background: url(https://www.nanshig.com/shop/templates/default/images/2014shop_background_img.png) no-repeat -7px -11px;
+}
+.nch-sortbar-array div{
+    width: 171px;
+    line-height: 34px;
+    padding-left: 12px;
+    padding-right: 13px;
+}
+.nch-sortbar-array div em{
+    line-height: 24px;
+    padding: 0 3px;
+    color: #CCC;
+}
+.nch-sortbar-array div input{
+    width: 38px;
+    padding: 1px;
+    border: 1px solid #D7D7D7;
+    text-align: center;
+}
+.nch-sortbar-array div>a{
+    margin-left: 2px;
+    display: inline;
+    padding: 0px 10px 0px;
+    border: 1px solid #D7D7D7;
+    line-height: 20px;
+    color: #555;
+}
+.nch-sortbar-owner{
+    font-size: 12px;
+    color: #777;
+    vertical-align: top;
+    display: inline-block;
+    padding: 0 0 0 5px;
+}
+.nch-sortbar-owner a{
+    font-size: 12px;
+    color: #777;
+    display: block;
+    height: 20px;
+    padding: 8px 8px 8px 4px;
+}
+.nch-sortbar-owner a i{
+    background: url(https://www.nanshig.com/shop/templates/default/images/2014shop_background_img.png) no-repeat -44px 0;
+    vertical-align: middle;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+}
+.nch-sortbar-owner a i:hover{
+    background: url(https://www.nanshig.com/shop/templates/default/images/2014shop_background_img.png) no-repeat -56px 0;
+}
+.list_pic{
+    display: block;
+    width: 1200px;
+    margin-left: -16px;
+}
+.item{
+    font-size: 12px;
+    vertical-align: middle;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    width: 288px;
+    height: 375px;
+    margin: 12px 0 0 12px;
+}
+.goods-content{
+    line-height: 18px;
+    background-color: #FFF;
+    width: 300px;
+    height: 370px;
+    margin: 3px;
+    border: solid 1px #F0F0F0;
+    border-radius: 2px;
+    position: relative;
+    z-index: 11;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgba(153, 153, 153, 0.1);
+}
+
+.goods-pic{
+    background: #FFF;
+    width: 300px;
+    height: 220px;
+    padding: 5px 5px 0 5px;
+    margin: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.goods-pic a{
+    line-height: 0;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 280px;
+    height: 220px;
+    overflow: hidden;
+}
+.goods-pic img{
+    max-width: 280px;
+    max-height: 220px;
+}
+.goods-info{
+    width: 300px;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 230px;
+}
+.goods-content:hover{
+    height: 445px;
+    border:4px solid #2f97f0;
+}
+.goods-content:hover .goods-info{
+    top: 180px;
+}
+.goods-pic-scroll-show{
+    background: rgba(255, 255, 255, 0.9);
+    width: 260px;
+    height: 30px;
+    padding: 5px 10px;
+}
+.goods-name{
+    font-size: 12px;
+    line-height: 16px;
+    color: #999;
+    background-color: #FFF;
+    height: 32px;
+    display: block;
+    padding: 0 10px;
+    overflow: hidden;
+}
+.goods-name a{
+    color: #333;
+}
+.goods-price{
+    font-size: 12px;
+    color: #C00;
+    background-color: #FFF;
+    white-space: nowrap;
+    display: block;
+    height: 25px;
+    padding: 5px 10px;
+    overflow: hidden;
+}
+.sale-price{
+    font-size: 16px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70px;
+    float: left;
+    overflow: hidden;
+}
+.market-price{
+    color: #999;
+    text-decoration: line-through;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.raty{
+    width: 80px;
+    float: right;
+    margin-right: 10px;
+}
+.goods-sub{
+    margin-top: 15px;
+    height: 35px;
+    padding: 5px 10px 10px;
+}
+.goods-compare{
+    line-height: 20px;
+    color: #999;
+    background: rgba(255, 255, 255, 0.9);
+    height: 25px;
+    float: right;
+    padding: 1px 5px;
+    margin: 0;
+    border: solid 1px #EEE;
+    cursor: pointer;
+}
+.goods-compare i{
+    background: url(https://www.nanshig.com/shop/templates/default/images/2014shop_background_img.png) no-repeat -50px -100px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+}
+.sell-stat{
+    width: 212px;
+    margin: 0 auto;
+    border-top: solid 1px #EEE;
+    overflow: hidden;
+}
+.sell-stat ul{
+    width: 213px;
+    margin-left: -1px;
+}
+.sell-stat ul li{
+    text-align: center;
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    margin: 0;
+    border-left: solid 1px #EEE;
+    overflow: hidden;
+}
+.sell-stat ul li a{
+    color: #3388BB;
+}
+.sell-stat ul li p{
+    line-height: 20px;
+    color: #999;
+    height: 20px;
+}
+.store{
+    line-height: 40px;
+    background-color: #F5F5F5;
+    text-align: center;
+    display: block;
+    height: 40px;
+    clear: both;
+    border-top: solid 1px #EEE;
+}
+.store a{
+    color: #333;
+    line-height: 40px;
+}
+.add-cart{
+    display: block;
+}
+.add-cart a{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 30px;
+    color: #fff;
+    text-shadow: -2px 0 0 rgba(0, 0, 0, 0.05);
+    background-color: #2f97f0;
+    text-align: center;
+    display: block;
+    height: 40px;
+    padding: 8px 0;
+}
+.add-cart a i{
+    margin-right: 4px;
+    background: url(https://www.nanshig.com/shop/templates/default/images/tollsbor_new.png) no-repeat ;
+    background-position: 0 -72px;  
 }

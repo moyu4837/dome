@@ -1,180 +1,4 @@
-*{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    box-sizing: border-box;
-}
-a{
-    text-decoration: none;
-}
-.box{
-    width: 100%;
-}
-.enter{
-    width: 100%;
-    height: 36px;
-    background: #f9f9f9;
-}
 
-.wrapper{
-    width: 1200px;
-    line-height: 36px;
-   margin: auto;
-    color: #999;
-}
-.header{
-    position: relative;
-    display: flex;
-    margin: auto;
-    width: 1200px;
-    height: 100px;
-}
-h1{ width: 240px;
-    padding-top: 15px;
-    margin-right: 10px;
-}
-.ad{margin: 10px 10px 0 0;
-    width: 100px;
-    height: 70px;
-}
-.search-form{
-    position: relative;
-    margin: 20px 0 0 40px;
-    width: 500px;
-    height: 44px;
-}
-.search-tab{
-    font-size: 14px;
-    margin: 3px 2px 0 15px;
-    position: absolute;
-    line-height: 36px;
-    width: 60px;
-}
-
-.arrow{position: absolute;
-    top: 15px;
-    right:5px;
-    width: 6px;
-    height: 6px;
-    border-color: #777 transparent transparent transparent;
-    border-style: solid dashed dashed dashed;
-}
-.search-tab>li:hover .arrow{
-    border-color:  transparent transparent #777 transparent;
-}
-.search-tab>li{
-    text-align: center;
-    color: #666;
-    background: #fff;
-}
-.search-tab>li:nth-child(2){
-    text-align: center;
-    color: #666;
-    background: #fff;
-    display: none;
-}
-
-form{
-    width: 500px;
-    height: 44px;
-    border-radius: 30px;
-    border: 2px solid #2F97F0;
-}
-.input-text{
-    outline: none;
-    font-size: 12px;
-    width: 322px;
-    height: 38px;
-    border: none;
-    margin-left: 85px;
-    line-height: 38px;
-}
-.input-submit{
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 79px;
-    height: 36px;
-    background: #2F97F0;
-    font-size: 16px;
-    color: #fff;
-    border: none;
-    line-height: 1;
-    border-radius: 30px;
-}
-.keyword>ul{
-    display: flex;
-    font-size: 12px;
-    width: 500px;
-    height: 20px;
-    margin-top: 4px;
-    color: #999;
-}
-.keyword>ul>li{
-    color: #666;
-    margin-right: 12px;
-}
-.head-user-menu{
-    margin-left: 30px;
-    margin-top: 20px;
-    width: 252px;
-    display: flex;
-    justify-content: space-around;
-}
-dl{z-index: 2;
-    width: 112px;
-    float: right;
-}
-dl:hover>dt{
-    background: #fff;
-    position: relative;
-    border-bottom: 1px solid #fff;
-    top: 1px;
-}
-dl:hover .arrow{
-    border-color:  transparent transparent #777 transparent;
-}
-.cur{
-    display: block;
-}
-dt{background: #fafafa;
-    float: right;
-    padding: 10px;
-    color: #555;
-    font-size: 12px;
-    position: relative;
-    width: 112px;
-    height: 42px;
-    border: solid 1px #F0F0F0;
-}
-dd{float: right;
-    right: 0;
-    width: 308px;
-    height: 226px;
-    background: #fff;
-    border: solid 1px #F0F0F0;
-    display: none
-}
-.icon{
-    display: inline-block;
-    width: 20px;
-    height: 16px;
-}
-.tab{height: 36px;
-    color: #fff;
-    width: 100%;
-    background: #2f97f0;
-    display: flex;
-    justify-content: center;
-}
-h4{
-    padding:0 18px 0 18px;
-    line-height: 36px;
-}
-.tab>li{
-    padding:0 18px 0 18px;
-    line-height: 36px;
-}
 .banner{
     position: relative;
     overflow: hidden;
@@ -182,7 +6,7 @@ h4{
     height: 400px;
 }
 .ult{position: absolute;
-    width: 200%;
+    width: 300%;
     height: 400px;
 }
 .lun1{
@@ -190,7 +14,7 @@ h4{
     background-repeat: no-repeat;
     background-position: -150px;
     background-image: url(https://www.nanshig.com/data/upload/shop/editor/web-101-101-1.jpg?135);
-    width: 1519.2px;
+    width: 33.33333%;
     height: 100%;
     
 }
@@ -199,7 +23,8 @@ h4{
     background-repeat: no-repeat;
     background-position: -150px;
     background-image: url(https://www.nanshig.com/data/upload/shop/editor/web-101-101-3.jpg?634);
-    width: 1519.2px;
+    z-index: 100;
+    width: 33.33333%;
     height: 100%;
     
 }
@@ -211,6 +36,7 @@ h4{
     margin-left: -325px;
     justify-content: center;
     z-index: 1;
+    padding: 7px 8px;
     width: 616px;
     height: 20px;
 }
@@ -223,7 +49,7 @@ h4{
 .ji>span.active{
     background: #2F97F0;
 }
-p{  width: 80%;
+.banner p{  width: 1200px;
     height: 100px;
     line-height: 100px;
     /*background: red;*/
@@ -239,14 +65,14 @@ p{  width: 80%;
 p>span{
     background: #333;
 }
-p:hover{
+.banner p:hover{
     opacity: 0.6;
 }
-span:nth-child(1) {
+p span:nth-child(1) {
     float: left;
      
 }
-span:nth-child(2) {
+p span:nth-child(2) {
      float: right;
       
 }
@@ -288,14 +114,13 @@ span:nth-child(2) {
 .clearfix{
     margin-top: 7px;
     display: flex;
-    justify-content: space-around;
     color: #555;
     font-size: 12px;
-    width: 335px;
     line-height: 32px;
 }
 .list{
     width: 1200px;
+    height: 409px;
     margin: auto;
 }
 .list>li{
@@ -354,4 +179,160 @@ span:nth-child(2) {
     bottom: 30px;
     color: #fff;
     background: #ff5555;
+}
+.nsgfoot-bz{
+    padding: 10px;
+    width: 100%;
+    height: 112px;
+    background-color: #f5f4f4;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+.w-1200{
+    width: 1200px;
+    height: 90px;
+    margin: auto;
+}
+.nsgfoot-bottom{
+    width: 100%;
+    height: 230px;
+    background-color: #f5f4f4;
+}
+.bottom-box{
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+}
+.bottom-box-left{
+    width: 180px;
+    height: 197px;
+    float: left;
+    padding: 50px 50px 0 20px;
+    text-align: center;
+    
+
+}
+.bottom-app-code{
+    width: 116px;
+    height: 116px;
+    background-image: url(https://www.nanshig.com/shop/templates/default/images/indexBottomCode.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+.bottom-box-left>p{
+    width: 116px;
+    height: 12.8px;
+    font-size: 12px;
+    color: #525252;
+    line-height: 13px;
+}
+.box-center{
+    padding-top: 50px;
+}
+.box-center li{
+    float: left;
+    width: 140px;
+    height: 156px;
+    padding: 0 35px 0 32px;
+    border-right: 1px solid #eaeaea;
+}
+.box-center h3{
+    font-size: 18px;
+    line-height: 36px;
+    color: #525252;
+    font-weight: 600;
+}
+.box-center a{
+    display: block; 
+    font-size: 16px;
+    line-height: 40px;
+    color: #535353;
+}
+.contact-us{
+    padding: 0 35px 0 32px;
+    float: left;
+}
+.contact-us h3{
+    font-size: 18px;
+    line-height: 36px;
+    color: #525252;
+    font-weight: 600;
+}
+.contact-us h3+p{
+    font-size: 16px;
+    line-height: 25px;
+    padding-top: 5px;
+}
+.contact-us p{
+    font-size: 12px;
+    line-height: 23px;
+    color: #535353;
+}
+.gb-okhqb-yj{
+    margin-top: 6px;
+    width: 95px;
+    height: 26px;
+    border-radius: 5px;
+    border: 1px solid #d3d0d2;
+    text-align: center;
+    color: #535353;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 26px;
+}
+.attention-us{
+    position: relative;
+    float: left;
+    padding-left: 70px;
+}
+.attention-us h3{
+    font-size: 18px;
+    line-height: 36px;
+    color: #525252;
+    font-weight: 600;
+}
+.weiXin{
+    margin: 10px 20px 0 0;
+    float: left;
+    width: 44px;
+    height: 45px;
+    background: url(https://www.nanshig.com/shop/templates/default/images/indexBottom.png) no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-position: -8px 0;
+}
+.weiBo{
+    margin-top: 10px;
+    float: left;
+    width: 45px;
+    height: 45px;
+    background: url(https://www.nanshig.com/shop/templates/default/images/indexBottom.png) no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-position: -8px -45px;
+}
+.nsgfoot-rz{ 
+    width: 1200px;
+    margin: 30px auto 0 auto;
+}
+.nsgfoot-link{
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.nsgfoot-link a{display: inline-block;
+    margin: 0 10px;
+    font-size: 14px;
+    color: #666666;
+}
+.nsgfoot-copy{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+}
+.nsgfoot-copy a{
+    color: #666666;
+    text-decoration: none;
 }

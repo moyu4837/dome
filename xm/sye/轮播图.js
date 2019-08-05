@@ -12,10 +12,10 @@ $(function () {
     //拷贝第一张图片放到最后
     oBox.append(oBox.children("li").first().clone());
 
-    //获取页面 p标签(图片)的个数
+    //获取页面 li标签(图片)的个数
     var length = oBox.children("li").length;
     //设置oBox的宽度(根据图片的张数来动态设置标签的宽度)
-    oBox.css("width", parseInt(oSlider.width()) * length + 100 + "%");
+    oBox.css("width", parseInt(oSlider.width()).length + 100 + "%");
 
     //根据图片的张数来创建1，2，3...小图标
     for (var i = 0; i < length - 1; i++) oNav.append('<span>' + '</span>');
@@ -57,7 +57,7 @@ $(function () {
 
     //功能性方法
     function sliderAutoPlay() {
-        timer = setInterval(next, 2000)
+        timer = setInterval(next, 4000)
     }
 
     //切换显示下一张图片的方法
