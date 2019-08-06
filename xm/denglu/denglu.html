@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #FAFAFA;
+
+        }
+
+        .nc-login-layout {
+            width: 440px;
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nc-login {
+            background-color: #FFF;
+            width: 440px;
+            padding: 19px 19px 29px 19px;
+            border: solid 1px #E6E6E6;
+            border-radius: 5px;
+            float: right;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tabs-nav {
+            padding-inline-start: 0;
+            word-spacing: -1em;
+            border-bottom: solid 1px #E6E6E6;
+        }
+
+        .tabs-nav li {
+            vertical-align: bottom;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-align: center;
+            display: inline-block;
+            width: 50%;
+            height: 40px;
+            margin-bottom: -1px;
+        }
+
+        .tabulous_active {
+            color: #2f97f0;
+            display: block;
+            border-bottom: 3px solid #2f97f0;
+        }
+
+        .tabs-nav li a {
+            font-size: 18px;
+            color: #999;
+            line-height: 24px;
+            padding-bottom: 13px;
+            position: relative;
+        }
+
+        .tabulous_active i {
+            font-size: 0;
+            line-height: 0;
+            border-color: #2f97f0 transparent transparent transparent;
+            border-style: solid dashed dashed dashed;
+            border-width: 7px;
+            width: 0;
+            height: 0;
+            margin-left: -4px;
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            bottom: -17px;
+        }
+
+        .tabs-container {
+            margin-top: 30px;
+            padding: 0 40px 20px 40px;
+        }
+
+        .tabs-content {
+            width: 352px;
+            margin: auto;
+        }
+
+        .tabs-content dl {
+            background-color: #FFF;
+            width: 345px;
+            height: 52px;
+            margin-top: -1px;
+            border: solid 1px #E6E6E6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tabs-content dt {
+            font-size: 14px;
+            line-height: 20px;
+            color: #666;
+            width: 72px;
+            padding: 16px 0 16px 20px;
+            float: left;
+        }
+
+        .tabs-content dd {
+            line-height: 52px;
+        }
+
+        .tabs-content dd input {
+            font-size: 14px;
+            line-height: 28px;
+            width: 240px;
+            height: 28px;
+            padding: 0;
+            color: rgb(187, 187, 187);
+            border: none 0;
+            outline: none;
+        }
+
+        .code-div {
+            display: flex;
+            margin-top: 15px;
+            width: 100%;
+            height: 54px;
+        }
+
+        .code-div dl {
+            margin: 0;
+            width: 222px;
+        }
+
+        .code-div dd input {
+            width: 100px !important;
+        }
+
+        .code-div span {
+            width: 120px;
+            height: 52px;
+            float: right;
+            border: solid 1px #E6E6E6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .handle-div {
+            line-height: 20px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .auto {
+            color: #999;
+            float: left;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .checkbox {
+            vertical-align: middle;
+            display: inline-block;
+            margin-right: 4px;
+            font-size: 12px;
+        }
+
+        .handle-div .auto em {
+            font-style: normal;
+            display: none;
+            line-height: 20px;
+            color: #ff3238;
+            vertical-align: top;
+            margin-left: 6px;
+        }
+
+        .forget {
+            font-size: 12px;
+            float: right;
+        }
+
+        .submit-div {
+            margin-top: 15px;
+        }
+
+        .submit {
+            font-family: "microsoft yahei";
+            font-size: 16px;
+            font-weight: 600;
+            color: #FFF;
+            background-color: #2f97f0;
+            width: 348px;
+            height: 42px;
+            border: solid 1px #2f97f0;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .nc-login-api {
+            width: 340px;
+            margin: 0 auto;
+        }
+
+        .nc-login-api h4 {
+            font-size: 12px;
+            line-height: 20px;
+            color: #333;
+            font-weight: 600;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+
+        .nc-login-api a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #AAA;
+            vertical-align: top;
+            display: inline-block;
+            height: 32px;
+            margin-right: 24px;
+        }
+
+        .nc-login-api a i {
+            background: url(https://www.nanshig.com/shop/templates/default/images/login_pic.png) no-repeat;
+            vertical-align: middle;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin-right: 6px;
+        }
+
+        .nc-login-api a.sina i {
+            background-position: -32px 0;
+        }
+    </style>
+    <script src="./jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div class="nc-login-layout">
+        <div class="nc-login">
+            <div class="nc-login-mode">
+                <ul class="tabs-nav">
+                    <li>
+                        <a href="" class="tabulous_active">用户登录
+                            <i></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">手机验证码登录
+                            <i></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tabs-container">
+                    <div class="tabs-content">
+                        <form action="">
+                            <dl>
+                                <dt>账 &nbsp; 号：</dt>
+                                <dd>
+                                    <input type="text" value="用户名/邮箱/已验证手机">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>密 &nbsp; 码：</dt>
+                                <dd>
+                                    <input type="text" value="6-20个大小写英文字母、符号或数字">
+                                </dd>
+                            </dl>
+                            <div class="code-div">
+                                <dl>
+                                    <dt>验证码：</dt>
+                                    <dd>
+                                        <input type="text" value="输入验证码">
+                                    </dd>
+                                </dl>
+                                <span></span>
+                            </div>
+                            <div class="handle-div">
+                                <span class="auto">
+                                    <input type="checkbox" class="checkbox">七天自动登录
+                                    <em class="">请勿在公用电脑上使用</em>
+                                </span>
+                                <a href="" class="forget">忘记密码？</a>
+                            </div>
+                            <div class="submit-div">
+                                <input type="submit" class="submit" value="登 &nbsp; 录">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="nc-login-api">
+                    <h4>您可以用合作伙伴账号登录：</h4>
+                    <a href="">
+                        <i></i>QQ</a>
+                    <a href="" class="sina">
+                        <i></i>新浪微博
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

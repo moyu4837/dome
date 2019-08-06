@@ -259,7 +259,7 @@ em{
 .raty{
     width: 80px;
     float: right;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 .goods-sub{
     margin-top: 15px;
@@ -345,4 +345,40 @@ em{
     margin-right: 4px;
     background: url(https://www.nanshig.com/shop/templates/default/images/tollsbor_new.png) no-repeat ;
     background-position: 0 -72px;  
+}
+.page {
+    /* position: fixed; */
+    /* bottom: 0px; */
+    width: 1130px;
+    margin: 20px auto;
+    /* background: #195; */
+    text-align: center;
+    font-size: 0;
+    font-family: Verdana;
+    padding: 10px 16px
+}
+
+.page a {
+    display: inline-block;
+    height: 20px;
+    padding: 0 7px;
+    border: #CCC solid 1px;
+    font: 12px/20px Verdana;
+    text-decoration: none;
+    margin-left: 5px;
+    background: #FFF
+}
+
+#page a:hover {
+    background: #09F;
+    color: #FFF;
+    /* border-color: #09F */
+}
+
+#page .active {
+    background: #CCC
+}
+
+#page a:active {
+    opacity: .8
 }
