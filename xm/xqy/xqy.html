@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="../include.js"></script>
+    <link rel="stylesheet" href="../toube/toubu.css">
+    <link rel="stylesheet" href="../dibu/dibu.css">
+    <link rel="stylesheet" href="css/magnifier.css">
+    <link rel="stylesheet" href="./xqy.css">
+    <script src="./xqy.js"></script>
+</head>
+
+<body>
+    <div class="toubu">
+        <include src="../toube/toubu.html"></include>
+    </div>
+    <div class="mand">
+        <div class="nch-breadcrumb">
+            <i></i>
+            <span>
+                <a href="">首页</a>
+            </span>
+            <span class="arro">></span>
+            <span>
+                <a href="">鞋靴</a>
+            </span>
+            <span class="arro">></span>
+            <span>
+                <a href="">潮款鞋靴</a>
+            </span>
+            <span class="arro">></span>
+            <span>
+                <a href="">板鞋</a>
+            </span>
+            <span class="arro">></span>
+            <span>
+                <a href="">2019春季新款小白鞋男韩版板鞋男士白鞋百搭休闲鞋夏季增高男鞋子 白色 36</a>
+            </span>
+        </div>
+        <div class="wrappe">
+            <div class="ncs-detail">
+                <div class="magnifier" id="magnifier1">
+                    <div class="magnifier-container">
+                        <div class="images-cover"></div>
+                        <!--当前图片显示容器-->
+                        <div class="move-view"></div>
+                        <!--跟随鼠标移动的盒子-->
+                    </div>
+                    <div class="magnifier-assembly">
+                        <div class="magnifier-btn">
+                            <span class="magnifier-btn-left">&lt;</span>
+
+                            <span class="magnifier-btn-right">&gt;</span>
+                        </div>
+                        <!--按钮组-->
+                        <div class="magnifier-line">
+                            <ul class="clearfix animation03">
+                                <li>
+                                    <div class="small-img">
+                                        <img src="" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--缩略图-->
+                    </div>
+                    <div class="magnifier-view"></div>
+                    <!--经过放大的图片显示容器-->
+                </div>
+                <div class="ncs-goods-summary">
+                    <div class="name">
+                        <h2>2019春季新款小白鞋男韩版板鞋男士白鞋百搭休闲鞋夏季增高男鞋子 白色 36</h2>
+                    </div>
+                    <div class="ncs-meta">
+                        <dl>
+                            <dt>市 场 价：</dt>
+                            <dd class="cost-price">
+                                <strong>¥135.00</strong>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>商 城 价：</dt>
+                            <dd class="price">
+                                <strong>¥89.00</strong>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>商品评分：</dt>
+                            <dd>
+                                <span class="raty">
+                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                </span>
+                                <a href="">共有0条评价</a>
+                            </dd>
+                        </dl>
+                        <div class="ncs-goods-code">
+                            <p>
+                                <img src="https://www.nanshig.com/data/upload/shop/store/47/227209.png" alt="">
+                            </p>
+                            <span>客户端扫购有惊喜</span>
+                        </div>
+                    </div>
+                    <div class="ncs-logistics">
+                        <dl>
+                            <dt>配&nbsp; 送&nbsp; 至：</dt>
+                            <dd class="ncs-freight_box">
+                                <div class="text"></div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dibu">
+        <include src="../dibu/dibu.html"></include>
+    </div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/magnifier.js"></script>
+<script type="text/javascript">
+    var magnifierConfig = {
+        magnifier: "#magnifier1", //最外层的大容器
+        width: 360, //承载容器宽
+        height: 360, //承载容器高
+        moveWidth: null, //如果设置了移动盒子的宽度，则不计算缩放比例
+        zoom: 5 //缩放比例
+    };
+    var _magnifier = magnifier(magnifierConfig);
+</script>
+
+</html>

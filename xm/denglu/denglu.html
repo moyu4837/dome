@@ -37,7 +37,6 @@
             border-radius: 5px;
             float: right;
             position: relative;
-            z-index: 1;
         }
 
         .tabs-nav {
@@ -81,7 +80,6 @@
             height: 0;
             margin-left: -4px;
             position: absolute;
-            z-index: 1;
             left: 50%;
             bottom: -17px;
         }
@@ -100,10 +98,8 @@
             background-color: #FFF;
             width: 345px;
             height: 52px;
-            margin-top: -1px;
             border: solid 1px #E6E6E6;
             position: relative;
-            z-index: 1;
         }
 
         .tabs-content dt {
@@ -146,9 +142,7 @@
             width: 100px !important;
         }
 
-        .code-div span {
-            width: 120px;
-            height: 52px;
+        canvas {
             float: right;
             border: solid 1px #E6E6E6;
             position: relative;
@@ -159,6 +153,10 @@
             line-height: 20px;
             margin-top: 15px;
             overflow: hidden;
+        }
+
+        .yi {
+            border: solid 1px #150 !important;
         }
 
         .auto {
@@ -194,7 +192,6 @@
         }
 
         .submit {
-            font-family: "microsoft yahei";
             font-size: 16px;
             font-weight: 600;
             color: #FFF;
@@ -243,7 +240,9 @@
             background-position: -32px 0;
         }
     </style>
-    <script src="./jquery-3.4.1.js"></script>
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="../captcha.js"></script>
+
 </head>
 
 <body>
@@ -264,27 +263,27 @@
                 </ul>
                 <div class="tabs-container">
                     <div class="tabs-content">
-                        <form action="">
+                        <div class="form">
                             <dl>
                                 <dt>账 &nbsp; 号：</dt>
                                 <dd>
-                                    <input type="text" value="用户名/邮箱/已验证手机">
+                                    <input type="text" placeholder="用户名/邮箱/已验证手机" id="usernameID">
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>密 &nbsp; 码：</dt>
                                 <dd>
-                                    <input type="text" value="6-20个大小写英文字母、符号或数字">
+                                    <input type="text" placeholder="6-20个大小写英文字母、符号或数字" id="password">
                                 </dd>
                             </dl>
                             <div class="code-div">
                                 <dl>
                                     <dt>验证码：</dt>
                                     <dd>
-                                        <input type="text" value="输入验证码">
+                                        <input type="text" placeholder="输入验证码" id="imageCode">
                                     </dd>
                                 </dl>
-                                <span></span>
+                                <canvas width="120" height="90" id="captcha"></canvas>
                             </div>
                             <div class="handle-div">
                                 <span class="auto">
@@ -294,9 +293,9 @@
                                 <a href="" class="forget">忘记密码？</a>
                             </div>
                             <div class="submit-div">
-                                <input type="submit" class="submit" value="登 &nbsp; 录">
+                                <button class="submit">登 &nbsp; 录</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div class="nc-login-api">
@@ -310,6 +309,20 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function () {
+            $(".checkbox").click(function () {
+                $(".auto>em").toggle("display", "inline-block" | "display", "none")
+            })
+            $("dl").click(function () {
+                $(this).addClass("yi");
+            })
+            $("dl").mouseout(function () {
+                $(this).removeClass("yi");
+            })
+        })
+    </script>
+    <script src="./login.js"></script>
 </body>
 
 </html>

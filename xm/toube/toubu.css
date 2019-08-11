@@ -152,23 +152,23 @@ h4:hover{
     display: flex;
     justify-content: space-around;
 }
-dl{z-index: 2;
+.my-mall{z-index: 2;
     width: 112px;
     float: right;
 }
-dl:hover>dt{
+.my-mall:hover>dt{
     background: #fff;
     position: relative;
     border-bottom: 1px solid #fff;
     top: 1px;
 }
-dl:hover .arrow{
+.my-mall:hover .arrow{
     border-color:  transparent transparent #777 transparent;
 }
 .cur{
     display: block;
 }
-dt{background: #fafafa;
+.my-mall dt{background: #fafafa;
     float: right;
     padding: 10px;
     color: #555;
@@ -177,6 +177,176 @@ dt{background: #fafafa;
     width: 112px;
     height: 42px;
     border: solid 1px #F0F0F0;
+}
+.my-cart{z-index: 2;
+    position: relative;
+    width: 112px;
+    float: right;
+}
+.my-cart:hover>dt{
+    background: #fff;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    top: 1px;
+}
+.my-cart:hover .arrow{
+    border-color:  transparent transparent #777 transparent;
+}
+.my-cart>dt{background: #fafafa;
+    float: right;
+    padding: 10px;
+    color: #555;
+    font-size: 12px;
+    position: relative;
+    width: 112px;
+    height: 42px;
+    border: solid 1px #F0F0F0;
+}
+.my-cart dd .sub-title {
+    line-height: 26px;
+    height: 40px;
+    padding: 7px;
+    border-bottom: solid 1px #DDD;
+}
+.my-cart dd .sub-title h5 {
+    font-weight: 600;
+    font-size: 12px;
+    float: left;
+}
+.my-cart dd .incart-goods-box {
+    display: block;
+    width: 348px;
+    max-height: 267px;
+    overflow: hidden;
+    position: relative;
+}
+.my-cart dd .incart-goods {
+    text-align: center;
+    width: 100%;
+}
+.my-cart dd .incart-goods dl {
+    display: block;
+    width: 98%;
+    height: 66px;
+    clear: both;
+    margin: 0 auto 0 2%;
+    border-bottom: dotted 1px #DDD;
+    position: relative;
+    z-index: 1;
+}
+.my-cart dd .incart-goods .goods-name {
+    line-height: 16px;
+    background-color: transparent;
+    text-align: left;
+    width: 180px;
+    height: 32px;
+    padding: 0;
+    position: absolute;
+    top: 8px;
+    left: 64px;
+}
+.my-cart dd .incart-goods .goods-name a {
+    font-size: 12px;
+    color: #333;
+}
+.my-cart dd .incart-goods .goods-thumb {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.my-cart dd .goods-thumb a {
+    line-height: 0;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 48px;
+    height: 48px;
+    border: solid 1px #DDD;
+    overflow: hidden;
+}
+.my-cart dd .goods-thumb a>img {
+    max-width: 48px;
+    max-height: 48px;
+}
+.head-user-menu dl dd .incart-goods .goods-pri {
+    text-align: right;
+    width: 80px;
+    height: 16px;
+    position: absolute;
+    top: 6px;
+    right: 12px;
+}
+.head-user-menu dl dd .incart-goods dd.goods-pri em {
+    font-size: 11px !important;
+    font-weight: normal !important;
+    line-height: 16px;
+    color: #777 !important;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+    width: 50px;
+    margin-right: 4px;
+    overflow: hidden;
+}
+.head-user-menu dl dd .incart-goods dd.handle {
+    position: absolute;
+    width: 32px;
+    top: 22px;
+    right: 10px;
+}
+.head-user-menu dl dd a {
+    font-size: 12px;
+    color: #005EA6;
+}
+.head-user-menu dl dd .checkout {
+    font-size: 12px;
+    background-color: #F0F0F0;
+    text-align: right;
+    padding: 8px;
+    overflow: hidden;
+}
+.head-user-menu dl dd .checkout .total-price {
+    line-height: 20px;
+    display: block;
+}
+.head-user-menu dl dd .checkout .total-price i {
+    font-weight: 600;
+    color: #C00;
+    margin: 0 4px;
+    font-style: normal;
+}
+.head-user-menu dl dd .checkout .total-price em {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #C00;
+}
+.head-user-menu dl dd .checkout .btn-cart {
+    float: right;
+    clear: both;
+    line-height: 20px;
+    color: #FFF;
+    background-color: #2f97f0;
+    padding: 4px 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+}
+.head-user-menu dl div.addcart-goods-num {
+    font: bold 11px/14px Verdana;
+    color: #FFF;
+    background: #F00;
+    text-align: center;
+    display: inline-block;
+    height: 16px;
+    min-width: 16px;
+    border: none 0;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 3;
+    top: -4px;
+    left: 20px;
 }
 .my-mall .icon{
     background: url(https://www.nanshig.com/shop/templates/default/images/top_bg.png) no-repeat;
@@ -198,7 +368,7 @@ dt{background: #fafafa;
     width: 20px;
     height: 16px;
 }
-dd{float: right;
+.my-mall dd{float: right;
     right: 0;
     width: 308px;
     height: 226px;
@@ -206,6 +376,20 @@ dd{float: right;
     border: solid 1px #F0F0F0;
     display: none
 }
+.my-cart>dd{float: right;
+    right: 0;
+    max-width: 340px;
+    background: #fff;
+    border: solid 1px #F0F0F0;
+    display: none
+}
+.my-mall:hover dd{
+    display: block;
+}
+.my-cart:hover dd{
+    display: block;
+}
+
 .icon{
     display: inline-block;
     width: 20px;

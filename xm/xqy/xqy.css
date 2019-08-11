@@ -1,0 +1,263 @@
+.nch-breadcrumb {
+    width: 1200px;
+    height: 40px !important;
+    font-size: 0;
+    text-align: left;
+    height: 20px;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+.nch-breadcrumb i {
+    font-size: 14px;
+    color: #AAA;
+    margin-right: 4px;
+}
+
+.nch-breadcrumb span {
+    font-size: 12px;
+    line-height: 20px;
+    color: #999;
+    display: inline-block;
+    height: 20px;
+    zoom: 1;
+}
+
+.nch-breadcrumb a {
+    color: #777;
+    display: block;
+}
+
+.arro {
+    font-family: "宋体";
+    line-height: 20px;
+    color: #AAA;
+    margin: 0 6px;
+}
+
+.wrappe {
+    width: 1200px;
+    margin: auto;
+}
+
+.ncs-detail {
+    display: flex;
+    min-height: 460px;
+    margin-bottom: 20px;
+    border: solid 1px #EEE;
+    position: relative;
+}
+
+.magnifier {
+    background-color: #FFF;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    position: relative;
+}
+
+.magnifier .images-cover {
+    position: absolute;
+    overflow: hidden;
+    opacity: 1;
+    height: 360px;
+    width: 360px;
+    left: 20px;
+    top: 20px;
+}
+
+.magnifier .images-cover img {
+    position: absolute;
+    margin-left: -177px !important;
+    width: 320px;
+    height: 320px;
+}
+
+.magnifier .controller {
+    width: 320px;
+    height: 52px;
+    position: relative;
+    overflow: hidden;
+}
+
+.magnifier .controller {
+    width: 320px;
+    height: 52px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: -42px;
+}
+
+.magnifier .controller ul {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.magnifier .controller li {
+    vertical-align: middle;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    width: 58px;
+}
+
+.magnifier .controller img {
+    padding: 0;
+    border-width: 2px;
+    border-color: #2f97f0;
+    width: 48px;
+    height: 48px;
+}
+
+.ncs-goods-summary {
+    background-color: #FFF;
+    float: right;
+    width: 622px;
+    min-height: 460px;
+    margin-right: 208px;
+    border-right: solid 1px #EEE;
+    border-left: solid 1px #EEE;
+}
+
+.ncs-goods-summary .name {
+    padding: 15px 20px;
+}
+
+.ncs-goods-summary .name h2,
+.ncs-goods-summary .name strong {
+    font-size: 16px;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+}
+
+.ncs-meta {
+    width: 622px;
+    height: 138px;
+    color: #666;
+    background: #DADADA url(https://www.nanshig.com/shop/templates/default/images/shop/goods_meta_bg.png) no-repeat 0 50%;
+    background-size: cover;
+    padding: 15px 0;
+    position: relative;
+    box-shadow: inset 4px 0 1px rgba(153, 153, 153, 0.15);
+}
+
+.ncs-goods-summary dl {
+    font-size: 0;
+}
+
+.ncs-meta dl dt,
+.ncs-meta dl dd {
+    line-height: 30px;
+    height: 30px;
+}
+
+.ncs-goods-summary dl dt,
+.ncs-goods-summary dl dd {
+    font-size: 12px;
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    min-height: 24px;
+    padding: 6px 0 0;
+}
+
+.ncs-goods-summary dt {
+    text-align: right;
+    width: 96px;
+    margin-right: 6px;
+}
+
+.ncs-meta .cost-price strong {
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.ncs-meta .price strong {
+    color: #c00;
+    font: 700 30px/25px Tahoma;
+    vertical-align: middle;
+    text-shadow: 0 1px 0 #6C0900;
+}
+
+.raty {
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    display: inline-block;
+    zoom: 1;
+}
+
+.ncs-meta dl dd a {
+    color: #666;
+    text-decoration: underline;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.ncs-goods-code {
+    width: 100px;
+    height: 120px;
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    right: 12px;
+}
+
+.ncs-goods-code p {
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ncs-goods-code img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.ncs-goods-code span {
+    font-size: 12px;
+}
+
+.ncs-logistics {
+    position: relative;
+    z-index: 2;
+}
+
+.ncs-goods-summary dl dt,
+.ncs-goods-summary dl dd {
+    font-size: 12px;
+    line-height: 24px;
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    min-height: 24px;
+    padding: 6px 0 0;
+}
+.ncs-freight-select .text {
+    line-height: 26px;
+    background-color: #FFF;
+    height: 26px;
+    float: left;
+    padding: 0 20px 0 15px;
+    border: solid 1px #E6E6E6;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+}

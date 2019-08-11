@@ -44,6 +44,73 @@ em{
     height: 20px;
     padding: 8px 10px;
 }
+.v_module_recommend {
+    display: block;
+    overflow: hidden;
+}
+.v_module_recommend li {
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    width: 244px;
+    padding: 3px;
+}
+.v_module_recommend li .goods-pic {
+    width: 90px;
+    height: 90px;
+    margin: 0;
+}
+.v_module_recommend li .goods-pic a {
+    line-height: 0;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+.v_module_recommend li .goods-pic img {
+    max-width: 90px;
+    max-height: 90px;
+}
+.v_module_recommend li .goods-inf {
+    padding-top: 3px;
+    width: 130px;
+    margin: 0;
+}
+.v_module_recommend li .goods-inf dt {
+    line-height: 14px;
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+}
+.v_module_recommend li .goods-inf dt a {
+    color: #777;
+    font-size: 12px;
+}
+.v_module_recommend li .goods-inf .goods-pric {
+    color: #555;
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+.v_module_recommend li .goods-inf .goods-pric em {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff3c00;
+}
+.v_module_recommend li .goods-inf .buy-btn a {
+    line-height: 20px;
+    color: #FFF;
+    background-color: #ff3c00;
+    height: 30px;
+    font-size: 12px;
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 2px;
+}
 #main-nav{
     width: 100%;
     height: 38px;
@@ -203,6 +270,7 @@ em{
     top: 230px;
 }
 .goods-content:hover{
+    z-index: 1000;
     height: 445px;
     border:4px solid #2f97f0;
 }
@@ -238,7 +306,7 @@ em{
     padding: 5px 10px;
     overflow: hidden;
 }
-.sale-price{
+.price{
     font-size: 16px;
     font-weight: 600;
     text-overflow: ellipsis;
@@ -359,24 +427,28 @@ em{
 }
 
 .page a {
+    color: #555;
+    font-weight: bold;
     display: inline-block;
-    height: 20px;
-    padding: 0 7px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
     border: #CCC solid 1px;
-    font: 12px/20px Verdana;
+    font-size: 12px;
     text-decoration: none;
-    margin-left: 5px;
     background: #FFF
 }
 
 #page a:hover {
-    background: #09F;
-    color: #FFF;
+    border: 1px solid red;
+    color: #09F;
     /* border-color: #09F */
 }
 
 #page .active {
-    background: #CCC
+    color: #fff !important;
+    background: #09F;
+    border: #CCC solid 1px !important;
 }
 
 #page a:active {

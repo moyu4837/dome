@@ -8,50 +8,87 @@
     <title>Document</title>
     <link rel="stylesheet" href="./nanshigo.css">
     <link rel="stylesheet" href="../toube/toubu.css">
-    <script src="./jquery-sye.js"></script>
-    <script src="../toube/jquery-3.4.1.js"></script>
-    <script src="../toube/include.js"></script>
+    <link rel="stylesheet" href="../dibu/dibu.css">
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="../include.js"></script>
     <script src="./轮播图.js"></script>
 </head>
 
 <body>
-    <div class="toubu">
-        <include src="../toube/toubu.html"></include>
-    </div>
-    <div class="banner">
-        <p>
-            <span class="prev">&lt;</span>
-            <span class="next">&gt;</span>
-        </p>
-        <div class="ji">
-
+    <div class="box">
+        <div class="toubu">
+            <include src="../toube/toubu.html"></include>
         </div>
-        <ul class="ult">
-            <li class="lun1">
-            </li>
-            <li class="lun2"></li>
-        </ul>
+        <div class="banner">
+            <p>
+                <span class="prev">&lt;</span>
+                <span class="next">&gt;</span>
+            </p>
+            <div class="ji">
+
+            </div>
+            <ul class="ult">
+                <li class="lun1">
+                </li>
+                <li class="lun2"></li>
+            </ul>
+        </div>
+        <div class="main">
+            <script>window.onload = function () {
+                    class SyeManager {
+                        constructor(data) {
+                            this.title = data.title;
+                            this.activeClass = data.activeClass;
+                            this.dataList = data.dataList;
+                            this.uls = null;
+                            this.currentIndex = 0;
+                        }
+                        createHTML() {
+                            var oconcent = $(`<div class="main">${this.createconcentHTML()}</div>`);
+                            $(".main").append(oconcent);
+                            this.uls = oconcent.find(".concent")
+                        }
+                        createconcentHTML() {
+                            let res = "";
+                            this.dataList.forEach((element, index) => {
+                                let lisStr = element.map((ele) => {
+                                    let html = ` <li>
+                            <span class="istoday">今日</span>
+                            <img src="${ele.src}" alt="">
+                            <div class="name">${ele.active_type}</div>
+                            <span class="price-final">${ele.original_price}</span>
+                            <a class="buy-icon" href="">去下单</a>
+                        </li>`
+                                    return html;
+                                }).join("");
+                                let ulStr = `<div class="concent"><div class="ns_tab">
+                        <div class="bn_fl">
+                            <ul>${this.title[index]}</ul>
+                        </div>
+                        <div class="bn_fr">每天10点上新</div>
+                    </div>
+                    <ul class=" clearfix">${this.activeClass[index]}
+                    </ul>
+                    <ul class="list">
+                        ${lisStr}
+                    </ul></div>`;
+                                res += ulStr;
+                            });
+                            return res;
+                        }
+                        init() {
+
+                            this.createHTML();
+                        }
+                    }
+                    $.getJSON("./sye.json", (json) => (new SyeManager(json)).init())
+                }
+            </script>
+        </div>
+        <div class="dibu">
+            <include src="../dibu/dibu.html"></include>
+        </div>
     </div>
-
-    <script>
-        $(function () {
-            $(".search-tab>li").mouseover(function () {
-                $(".search-tab>li:nth-child(2)").css("display", "list-item")
-            });
-            $(".search-tab>li").mouseout(function () {
-                $(".search-tab>li:nth-child(2)").css("display", "none")
-            });
-            $("dl").mouseover(function () {
-                $(this).children("dd").addClass("cur").children("dt")
-            });
-            $("dl").mouseout(function () {
-                $(this).children("dd").removeClass("cur")
-            });
-
-        }
-        )
-    </script>
-
 </body>
 
 </html>

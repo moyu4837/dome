@@ -8,10 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="./lby.css">
     <link rel="stylesheet" href="../toube/toubu.css">
-    <script src="../toube/include.js"></script>
-    <script src="../toube/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="../dibu/dibu.css">
+    <script src="../include.js"></script>
+    <script src="../jquery-3.4.1.js"></script>
     <script src="./lby.json"></script>
-    <script src="./jquery-lby.js"></script>
     <script src=""></script>
 </head>
 
@@ -30,27 +30,103 @@
             <div class="titl">
                 <h3>热门推荐</h3>
             </div>
+            <ul class="v_module_recommend">
+                <script>
+                    $(function () {
+                        /*请求页码*/
+                        $.ajax({
+                            type: "get",
+                            url: "/git/dome/xm/lby/getcx.1.php",
+                            dataType: "json",
+                            success: function (response) {
+                                if (response.status == "error") {
+                                    alert("网络繁忙，请检查网络连接");
+                                } else {
+                                    //创建3个标签显示在页面中
+                                    $("#page").empty();
+                                    for (var i = 0; i < response.data.count; i++) {
+                                        $("#page").append(`<a href="javascript:0;">${i + 1}</a>`);
+                                    }
+                                    $("#page").children("a:first").addClass("active");
+                                }
+                            }
+                        });
+                        let getList = (page, type) => {
+                            $.ajax({
+                                type: "post",
+                                url: "/git/dome/xm/lby/server.1.php",
+                                data: `page=${page}&type=${type}`,
+                                dataType: "json",
+                                success: function (response) {
+                                    var ress = response.map(ele => {
+                                        return `<li>
+                    <div class="goods-pic">
+                        <a href="javascript:0;">
+                            <img src=${ele.srcs} alt="">
+                        </a>
+                    </div>
+                    <dl class="goods-inf">
+                        <dt>
+                            <a href="javascript:0;">
+                                ${ele.titles}</a>
+                        </dt>
+                        <dd class="goods-pric">
+                            商城价：
+                            <em>${ele.goods_price}</em>
+                        </dd>
+                        <dd class="buy-btn">
+                            <a href="javascript:0;">立即抢购</a>
+                        </dd>
+                    </dl>
+
+                </li>`
+                                    }).join("");
+                                    $(".v_module_recommend").html(ress);
+                                }
+                            })
+                        }
+                        var orderType = ["default", "", "", "price"];
+                        var type = "default";
+                        getList(0, type);
+
+                        $("#page").on("click", "a", function () {
+                            // console.log($(this).index());
+                            /* 设置当前标签的选中状态 */
+                            getList($(this).index(), type);
+                            $("#page").children("a").eq($(this).index()).addClass("active").siblings().removeClass("active");
+                        })
+
+                        /* 点击排序 */
+                        $(".v_module_recommend li").click(function () {
+                            type = orderType[$(this).index()];
+                            /* 设置当前标签的选中状态 */
+                            getList(0, type);
+                            $("#page").children("a").eq(0).addClass("active").siblings().removeClass("active");
+                        })
+                    })</script>
+
+            </ul>
         </div>
         <nav id="main-nav">
             <div class="nch-sortbar-array">排序方式：
                 <ul>
                     <li>
-                        <a href="">默认
+                        <a href="javascript:0;">默认
                             <i></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">销量
+                        <a href="javascript:0;">销量
                             <i></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">人气
+                        <a href="javascript:0;">人气
                             <i></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">价格
+                        <a href="javascript:0;">价格
                             <i></i>
                         </a>
                     </li>
@@ -59,82 +135,222 @@
                             <input type="text">
                             <em>-</em>
                             <input type="text">
-                            <a href="">确定</a>
+                            <a href="javascript:0;">确定</a>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="nch-sortbar-owner">
                 <span>
-                    <a href="">
+                    <a href="javascript:0;">
                         <i></i>平台自营</a>
                 </span>
 
             </div>
             <div class="nch-sortbar-owner">
                 <span>
-                    <a href="">
+                    <a href="javascript:0;">
                         <i></i>赠品</a>
                 </span>
 
             </div>
         </nav>
         <ul class="list_pic">
-            <!-- <li class="item">
-                <div class="goods-content">
-                    <div class="goods-pic">
-                        <a href="">
-                            <img src="https://www.nanshig.com/data/upload/shop/store/goods/47/47_06071111289163602_240.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="goods-info">
-                        <div class="goods-pic-scroll-show"></div>
-                        <div class="goods-name">
-                            <a href="">2019春季新款小白鞋男韩版板鞋男士白鞋百搭休闲鞋夏季增高男鞋子 白色 36</a>
-                        </div>
-                        <div class="goods-price">
-                            <em class="sale-price">￥89.00</em>
-                            <em class="market-price">￥135.00</em>
-                            <span class="raty">
-                                <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
-                                <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
-                                <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
-                                <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
-                                <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
-                            </span>
-                        </div>
-                        <div class="goods-sub">
-                            <span class="goods-compare">
-                                <i></i>加入对比
-                            </span>
-                        </div>
-                        <div class="sell-stat">
-                            <ul>
-                                <li>
-                                    <a href="">1</a>
-                                    <p>商品销量</p>
-                                </li>
-                                <li>
-                                    <a href="">0</a>
-                                    <p>用户评论</p>
-                                </li>
-                                <li>
-                                    <em>&nbsp;</em>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="store">
-                            <a href="">潮男公社</a>
-                        </div>
-                        <div class="add-cart">
-                            <a href="">
-                                <i></i>加入购物车</a>
-                        </div>
-                    </div>
-                </div>
-            </li> -->
+            <script>$(function () {
+                    let itemData;
+                    let oBox = $(".list_pic");
+                    let margin = 10;
+                    /*请求页码*/
+                    $.ajax({
+                        type: "get",
+                        url: "/git/dome/xm/lby/getcx.php",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response.status == "error") {
+                                alert("网络繁忙，请检查网络连接");
+                            } else {
+                                //创建3个标签显示在页面中
+                                $("#page").empty();
+                                for (var i = 0; i < response.data.count; i++) {
+                                    $("#page").append(`<a href="javascript:;">${i + 1}</a>`);
+                                }
+                                $("#page").children("a:first").addClass("active");
+                            }
+                        }
+                    });
+                    let getList = (page, type) => {
+                        $.ajax({
+                            type: "post",
+                            url: "/git/dome/xm/lby/server.php",
+                            data: `page=${page}&type=${type}`,
+                            dataType: "json",
+                            success: function (response) {
+                                itemData = response;
+                                var res = response.map((ele, i) => {
+                                    return `<li class="item" id=${ele.gid} data-index=${i}>
+                                    <div class="goods-content">
+                                        <div class="goods-pic">
+                                            <a href="javascript:0;">
+                                                <img src=${ele.src} alt="">
+                                            </a>
+                                        </div>
+                                        <div class="goods-info">
+                                            <div class="goods-pic-scroll-show"></div>
+                                            <div class="goods-name">
+                                                <a href="javascript:0;">${ele.title}</a>
+                                            </div>
+                                            <div class="goods-price">
+                                                <em class="price">￥${ele.sale_price}</em>
+                                                <em class="market-price">￥${ele.market_price}</em>
+                                                <span class="raty">
+                                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                                    <img src="https://www.nanshig.com/data/resource/js/jquery.raty/img/star-on.png" alt="">
+                                                </span>
+                                            </div>
+                                            <div class="goods-sub">
+                                                <span class="goods-compare">
+                                                    <i></i>加入对比
+                                                </span>
+                                            </div>
+                                            <div class="sell-stat">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:0;">${ele.acura}</a>
+                                                        <p>商品销量</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:0;">0</a>
+                                                        <p>用户评论</p>
+                                                    </li>
+                                                    <li>
+                                                        <em>&nbsp;</em>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="store">
+                                                <a href="javascript:0;">${ele.names}</a>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a>
+                                                    <i></i>加入购物车</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>`
+                                }).join("");
+                                $(".list_pic").html(res);
+                            }
+                        })
+                        console.log(oBox[0]);
+                        /*设置标签的位置信息(left top)*/
+                        computedOffset();
+                    }
+                    var orderType = ["default", "", "", "price"];
+                    var type = "default";
+                    getList(0, type);
+
+                    $("#page").on("click", "a", function () {
+                        console.log($(this).index());
+                        /* 设置当前标签的选中状态 */
+                        getList($(this).index(), type);
+                        $("#page").children("a").eq($(this).index()).addClass("active").siblings().removeClass("active");
+                    })
+
+                    /* 点击排序 */
+                    $(".list_pic li").click(function () {
+                        type = orderType[$(this).index()];
+                        /* 设置当前标签的选中状态 */
+                        getList(0, type);
+                        $("#page").children("a").eq(0).addClass("active").siblings().removeClass("active");
+                    })
+                    $(window).resize(computedOffset);
+
+                    function computedOffset() {
+                        let oItem = $(".item");
+                        let itemWidth = oItem.width() + 20;
+
+                        /*计算没行可以显示多少列*/
+                        let len = Math.floor(($(window).width() - margin) / (itemWidth + margin));
+                        let itemList = [];
+
+                        oItem.each(function (i, ele) {
+                            /*获取当前标签的高度*/
+                            let itemHeight = $(this).height() + 20;
+                            let currentRow = Math.floor(i / len); /*当前第几行*/
+                            let currentCol = i % len; /*当前第几列*/
+
+                            /*计算当前标签的left值和top值*/
+                            let offsetLeft = margin + currentCol * (itemWidth + margin);
+                            let offsetTop = margin + currentRow * (itemHeight + margin);
+
+                            if (currentRow == 0) {
+                                itemList.push({
+                                    left: offsetLeft,
+                                    offsetTop: margin + itemHeight
+                                });
+                                $(this).stop(true).animate({
+                                    left: offsetLeft,
+                                    top: offsetTop
+                                }, 20);
+                            } else {
+                                let minIndex = $.getMinIndexWithArr(itemList);
+
+                                let left = itemList[minIndex].left;
+                                let top = itemList[minIndex].offsetTop + margin;
+
+                                $(this).stop(true).animate({
+                                    left: left,
+                                    top: top
+                                }, 20);
+
+                                /*最核心步骤：更新数据*/
+                                itemList[minIndex].offsetTop = top + itemHeight;
+                            }
+                        })
+                    }
+                    /* 加入购物车的功能 */
+                    $(".list_pic").on("click", ".add-cart>a", function () {
+                        // console.log(index);
+                        var index = $(this).parents(".item").data("index");
+                        var goodid = itemData[index].goodid;
+                        var price = itemData[index].sale_price;
+                        console.log(goodid);
+                        $.ajax({
+                            type: "get",
+                            url: "/git/dome/xm/lby/addCart.php",
+                            data: `goodid=${goodid}&price=${price}`,
+                            dataType: "json",
+                            success: function (response) {
+                                // console.log(response);
+                                var text = response["totalRow"];
+                                $(".my-cart").html(text)
+
+                            }
+                        });
+
+                    })
+                    /* 跳转详情页的功能 */
+                    $(".list_pic").on("click", ".item", function () {
+                        console.log($(this)[0].id);
+
+                        window.open(`http://127.0.0.1/git/dome/xm/xqy/xqy.html?gid=${$(this)[0].id}`)
+                    })
+
+                    // // /* 给购物车按钮添加点击事件 */
+                    // $(".item").click(function () {
+                    //     window.open("../xqy/xqy.html")
+                    // })
+                });
+
+            </script>
         </ul>
         <div id="page" class="page"></div>
+    </div>
+    <div class="toubu">
+        <include src="../dibu/dibu.html"></include>
     </div>
 </body>
 

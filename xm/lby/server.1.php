@@ -1,18 +1,18 @@
 <?php
-$con = mysqli_connect("127.0.0.1", "root", "", "nsg");
+$con = mysqli_connect("127.0.0.1", "root", "", "test");
 # 查询获取表中的所有内容
 // $sql = "SELECT * FROM goods";
 
 // 查询表中的前20条数据
-$page = $_REQUEST["page"] * 28;
+$page = $_REQUEST["page"] * 4;
 $type = $_REQUEST["type"];
 
 if ($type == "default") {
-    $sql = "SELECT * FROM `list` ORDER by `gid` limit $page,28";
+    $sql = "SELECT * FROM `list` ORDER by `gid` limit $page,4";
 
 } else if ($type == "price") {
   // 按照价格从低到高进行排序
-    $sql = "SELECT * FROM `list` ORDER BY `sale_price` ASC limit $page,";
+    $sql = "SELECT * FROM `list` ORDER BY `sgoods_price` ASC limit $page,4";
 }
 
 // 查询表中的数据(按照某个字段排序)

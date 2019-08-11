@@ -49,12 +49,116 @@
             <dd></dd>
         </dl>
         <dl class="my-cart">
+            <div class="addcart-goods-num"></div>
             <dt>
                 <span class="icon"></span>
                 我的购物车
                 <i class="arrow"></i>
             </dt>
-            <dd></dd>
+            <dd>
+                <div class="sub-title">
+                    <h5>最新加入的商品</h5>
+                </div>
+                <div class="incart-goods-box">
+                    <!-- 
+                    <div class="incart-goods">
+                        <dl>
+                            <dt class="goods-name">
+                                <a href="">2019春季新款小白鞋男韩版板鞋男士白鞋百搭休闲鞋夏季增高男鞋子 白色 36</a>
+                            </dt>
+                            <dd class="goods-thumb">
+                                <a href="">
+                                    <img src="https://www.nanshig.com/data/upload/shop/store/goods/47/47_06071111289163602_60.jpg" alt="">
+                                </a>
+                            </dd>
+                            <dd class="goods-pri">
+                                <em>¥89.00×1</em>
+                            </dd>
+                            <dd class="handle">
+                                <em>
+                                    <a href="">删除</a>
+                                </em>
+                            </dd>
+                        </dl>
+                    </div>
+               
+                 --></div>
+                <div class="checkout">
+                    <span class="total-price">
+                    </span>
+                    <a href="" class="btn-cart">结算购物车中的商品</a>
+                </div>
+                <script>
+                    var targetData;
+                    /* 获取数据库中所有购物车相关的信息 */
+                    getCatInfo();
+
+                    function getCatInfo() {
+                        $.ajax({
+                            type: "get",
+                            url: "/git/dome/xm/toube/getCatData.php",
+                            dataType: "json",
+                            success: function (data) {
+                                targetData = data;
+                                /* 根据数据来渲染页面 */
+                                var res = data.map(function (ele) {
+                                    var html = `
+                    <div class="incart-goods" id=${ele.goodid}>
+                        <dl>
+                            <dt class="goods-name">
+                                <a href="">${ele.title}</a>
+                            </dt>
+                            <dd class="goods-thumb">
+                                <a href="">
+                                    <img src=${ele.src} alt="">
+                                </a>
+                            </dd>
+                            <dd class="goods-pri">
+                                <em>¥${ele.price}x${ele.num}</em>
+                            </dd>
+                            <dd class="handle">
+                                <em>
+                                    <a href="javascript:0;" class="del">删除</a>
+                                </em>
+                            </dd>
+                        </dl>
+                    </div>
+                `;
+                                    return html;
+                                }).join("");
+
+                                $(".incart-goods-box").html(res);
+
+                                // console.log(targetData);
+                                computedTotalPrice();
+
+                            }
+                        });
+                    }
+                    function computedTotalPrice() {
+                        var res = 0;
+                        targetData.forEach(element => {
+                            if (element.isActive == 1) {
+                                res += element.total * 1;
+                            }
+                        });
+                        console.log(res);
+                        $(".total-price").html("共<i>" + 1 + "</i>种商品 &nbsp;总计金额：<em>￥" + res + "</em>");
+
+                    }
+                    let itemData;
+                    //给删除添加点击事件
+                    $(".incart-goods-box").on("click", ".del", function () {
+                        console.log($(".incart-goods")[0].id);
+                        $.ajax({
+                            type: "get",
+                            url: "/git/dome/xm/toube/removeCart.php",
+                            data: `goodid=${$(".incart-goods")[0].id}`,
+                            success: function (response) { getCatInfo() }
+                        });
+                    })
+                </script>
+            </dd>
         </dl>
     </div>
 </div>
@@ -130,3 +234,13 @@
         <a href="" class="nc-appbar-hide"></a>
     </div>
 </div>
+<script>
+    $(function () {
+        $(".search-tab>li").mouseover(function () {
+            $(".search-tab>li:nth-child(2)").css("display", "list-item")
+        });
+        $(".search-tab>li").mouseout(function () {
+            $(".search-tab>li:nth-child(2)").css("display", "none")
+        });
+    })
+</script>
